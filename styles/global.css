@@ -1,0 +1,97 @@
+/* aplicando o box-sizing: border-box nas pseudo-class - somente assim para que seja aplicado */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+
+  /* suavização das fontes */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+}
+
+:root {
+  --background-color: #09090b;
+  --surface-color: #18181b;
+  --stroke-color: #27272a;
+  --text-color-primary: #f4f4f5;
+  --text-color-secondary: #a1a1aa;
+  /* --brand-gradient: linear-gradient(90deg, #fc4a1a 0%, #f7b733 100%); */
+  --brand-color-primary: #f7b733;
+  --brand-color-secondary: #fc4a1a;
+
+  /* font-family */
+  --ff-sans: "Inter", system-ui, sans-serif;
+
+  /* font-weight */
+  --fw-base: 400;
+  --fw-md: 500;
+  --fw-bold: 800;
+
+  /* font-size - rem olha para a base font-size do navegador que é geralmente 16px então é sempre feito a divisão de px por essa base */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-lg: 1.25rem; /* 20px */
+  --fs-xl: 1.5rem; /* 24px */
+  --fs-2xl: 2.5rem; /* 40px */
+}
+
+/* estrutura base (padrão) para o html e body de fonts e cor */
+html {
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-base);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--text-color-primary);
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+/* estrutura base (padrão) para h1, h2 e h3 */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: var(--text-color-primary);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  font-size: var(--fs-2xl);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+}
+
+/* removendo propriedades padrão da tag de ancora (link) */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* removendo propriedades padrão de lista, porem somente quando o ul tiver o atributo role="list" (role é usado para trabalhar com acessibilidade) -> isso porque quando é removido de uma lista o seu estilo é então perdido pelos navegadores o entendimento de que o ul/li é uma lista */
+ul[role="list"] {
+  list-style: none;
+}
+
+/* @media - estrutura base (padrão) para dispositivos maiores que 1280px */
+@media (width >= 80em) {
+  :root {
+    --fs-lg: 2rem; /* 20px */
+    --fs-xl: 3rem; /* 24px */
+    --fs-2xl: 4rem; /* 40px */
+  }
+}

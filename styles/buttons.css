@@ -1,0 +1,87 @@
+/* aplicando propriedades na classe .btn
+
+    a classe terá variaveis e outras classes que podem ser utilizadas em conjunto que irá depender da necessidade do tamaho do botao pois nas demais ha a aplicacacoes diferentes
+
+    bem como a classe .btn possui duas variaveis locais para utilizacao tanto na propria quanto no :hover a fim de alterar somente a variavel no :hover
+ */
+
+.btn {
+  /* variaveis */
+  --btn-color: var(--background-color);
+  --btn-bg-color: var(--text-color-primary);
+
+  border: 0;
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+
+  border-radius: 0.5rem;
+
+  font: var(--fw-md) var(--fs-base) / 1.5rem var(--ff-sans);
+
+  color: var(--btn-color);
+  background: var(--btn-bg-color);
+
+  cursor: pointer;
+}
+
+.btn:hover {
+  --btn-bg-color: linear-gradient(
+    90deg,
+    var(--brand-color-secondary) 0%,
+    var(--brand-color-primary) 100%
+  );
+
+  --btn-color: var(--surface-color);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+
+  font-size: var(--fs-sm);
+}
+.btn-md {
+  padding: 12px 24px;
+
+  font-size: var(--fs-base);
+}
+.btn-lg {
+  padding: 16px 32px;
+
+  font-size: 1.125rem;
+}
+
+/* botão que terá a necessidade de uma borda e texto gradiente
+
+    cria um botão estilizado que utiliza o atributo aria-label para exibir texto com um efeito visual.
+
+    .btn[aria-label] →→→ Aplica estilos apenas em botões que possuem aria-label.
+
+    &::before →→→ Cria um fundo interno ligeiramente menor (inset: 0.09375rem;) com a cor de fundo definida.
+
+    &::after →→→ Usa o valor do aria-label como texto, aplica a cor do botão (--btn-bg-color) como fundo e usa background-clip: text; para criar um efeito onde apenas o texto recebe o gradiente ou cor.
+*/
+.btn[aria-label] {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    inset: 0.09375rem;
+    background-color: var(--background-color);
+  }
+
+  &::after {
+    content: attr(aria-label);
+    background: var(--btn-bg-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 1;
+  }
+}

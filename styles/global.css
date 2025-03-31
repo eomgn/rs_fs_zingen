@@ -89,6 +89,18 @@ a {
   color: inherit;
 }
 
+/* definindo que ao :hover será aplicado as propriedades para estilizacao do texto em gradiente */
+a:hover {
+  background: linear-gradient(
+    90deg,
+    var(--brand-color-secondary) 0%,
+    var(--brand-color-primary) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* removendo propriedades padrão de lista, porem somente quando o ul tiver o atributo role="list" (role é usado para trabalhar com acessibilidade) -> isso porque quando é removido de uma lista o seu estilo, é então perdido pelos navegadores o entendimento de que o ul/li é uma lista */
 ul[role="list"] {
   list-style: none;

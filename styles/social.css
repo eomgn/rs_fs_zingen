@@ -1,0 +1,63 @@
+/* 
+   <a class="social"> e muda o ícone ao passar o mouse.
+
+    -> Define --bg-img como uma variável vazia por padrão.
+    -> Usa background-image: var(--bg-img); para definir a imagem de fundo.
+    -> Define tamanho fixo (1.5rem x 1.5rem) e exibe como bloco.
+
+    [aria-label="tiktok"] - por exemplo
+    -> Define --bg-img como o ícone padrão do TikTok (tiktok.svg).
+
+    :hover dentro do [aria-label="tiktok"]
+    -> Altera --bg-img para tiktok-hover.svg ao passar o mouse.
+
+    O link mostra o ícone normal e muda para um ícone alternativo ao passar o mouse
+ */
+
+a.social {
+  --bg-img: "";
+
+  background-image: var(--bg-img);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+
+  -webkit-background-clip: initial;
+  background-clip: initial;
+
+  /* tiktok */
+  &[aria-label="tiktok"] {
+    --bg-img: url(../assets/icons/tiktok.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/tiktok-hover.svg);
+    }
+  }
+
+  /* instagram */
+  &[aria-label="instagram"] {
+    --bg-img: url(../assets/icons/instagram.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/instagram-hover.svg);
+    }
+  }
+
+  /* discord */
+  &[aria-label="discord"] {
+    --bg-img: url(../assets/icons/discord.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/discord-hover.svg);
+    }
+  }
+
+  /* twitter */
+  &[aria-label="twitter"] {
+    --bg-img: url(../assets/icons/twitter.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/twitter-hover.svg);
+    }
+  }
+}

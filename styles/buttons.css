@@ -85,3 +85,16 @@
     z-index: 1;
   }
 }
+
+@media (width >= 80em) {
+  .btn-sm {
+    padding: 12px 24px;
+
+    font-size: var(--fs-base);
+  }
+  .btn-md {
+    padding: 16px 32px;
+
+    font-size: 1.125rem;
+  }
+}

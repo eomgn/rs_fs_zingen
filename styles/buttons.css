@@ -43,19 +43,19 @@
 }
 
 .btn-sm {
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
 
   font-size: var(--fs-sm);
 }
 
 .btn-md {
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
 
   font-size: var(--fs-base);
 }
 
 .btn-lg {
-  padding: 16px 32px;
+  padding: 1rem 2rem;
 
   font-size: 1.125rem;
 }
@@ -66,7 +66,7 @@
 
     .btn[aria-label] →→→ Aplica estilos apenas em botões que possuem aria-label.
 
-    &::before →→→ Cria um fundo interno ligeiramente menor (inset: 0.09375rem;) com a cor de fundo definida.
+    &::before →→→ Cria um fundo interno ligeiramente menor (inset: 1px;) com a cor de fundo definida.
 
     &::after →→→ Usa o valor do aria-label como texto, aplica a cor do botão (--btn-bg-color) como fundo e usa background-clip: text; para criar um efeito onde apenas o texto recebe o gradiente ou cor.
 */
@@ -77,7 +77,7 @@
     content: "";
     position: absolute;
     border-radius: inherit;
-    inset: 0.0975rem;
+    inset: 1px;
     background-color: var(--background-color);
   }
 

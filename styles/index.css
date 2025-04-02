@@ -6,3 +6,7 @@
 @import url(hero.css);
 @import url(sections.css);
 @import url(about.css);
+@import url(cards.css);
+
+/* o import de features.css só irá acontecer com a regra (width >= 80em); */
+@import url(features.css) (width >= 80em);
